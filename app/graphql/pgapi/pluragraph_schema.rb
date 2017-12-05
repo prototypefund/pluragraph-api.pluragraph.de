@@ -7,7 +7,7 @@ module Pgapi
     query(Types::QueryType)
     use GraphQL::Guard.new
 
-    max_depth 8
-    max_complexity 100
+    # max_depth 8
+    # max_complexity 100
   end
 end
