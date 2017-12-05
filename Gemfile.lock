@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pgapi (0.1.0)
+    pgapi (0.1.1)
       cancancan
       graphql
       graphql-guard
