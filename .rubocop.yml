@@ -1,0 +1,35 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds/*'
+    - 'lib/tasks/*'
+  UseCache: false
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+Rails:
+  Enabled: true
+Documentation:
+  Enabled: false
+Lint/HandleExceptions:
+  Enabled: false
+Lint/UselessAccessModifier:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
+  Max: 780
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 100
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Style/Lambda:
+  Enabled: false

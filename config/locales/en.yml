@@ -1,0 +1,135 @@
+en:
+  documentation:
+    created_at: The time and date the object was created at
+    description: The description for the object
+    name: The object display name
+    slug: The URI slug of the object name
+    updated_at: The time and date the object was updated at last
+    user_field: The user who owns the object
+    uuid: The UUID for the object
+    ancestry_parent: Returns the parent of the record, null for a root node
+    ancestry_root: Returns the root of the tree the record is in, self for a root node
+    ancestry: Returns a list of ancestors, starting with the root id and ending with the parent id
+    has_children: Returns true if the record has any children, false otherwise
+    has_parent: Returns true if the record has a parent, false otherwise
+    is_root: Returns true if the record is a root node, false otherwise
+    archive_number: Archive number if the object has been archived, otherwise null
+    archived_at: Archive at date if the object has been archived, otherwise null
+    deleted_at: Deleted at date if the object has been archived, otherwise null
+
+    connection:
+      categories: Liste of categories connected with the object
+      networks: List of networks connected with the object
+      organisations: List of organisations connected with the object
+      profiles: List of profiles connected with the object
+      trackings: List of trackings connected with the object
+      watchlists: List of watchlists conected to the current user
+
+    category:
+      category_type: A Category
+      organisation_categories_count: The amount of organisations in this category
+      potistion: The position for sorting the categories
+      sensitive_content: Boolean value for determining id the category contains sensitive content
+
+    network:
+      network_type: A Network
+      internal_handler: The internal handler for the network
+      show_fields: Field Options
+      icon: FontAwesome Icon (www.fontawesome.io/icons)
+      host_name: The network hast name
+      profiles_count: The amount of profiles in the network
+
+    organisation:
+      organisation_type: An Organisation
+      url: Website url
+      icon: Url to organisation profile image
+      ancestry: Returns a list of ancestors, starting with the root id and ending with the parent id
+      street: Street name
+      zipcode: Postcode/Zpcode
+      city: City
+      country: Country
+      latitude: Latitude
+      longitude: Longitude
+      send_twitter_create_notification_at: Date on which the twitter notification got sent
+      organisation_categories_count: The amount of categories the organisation is listed in
+      profiles_count: The amount of profiles on the organisation
+      cover_image: The cover image url
+      sensitive_content: Boolean value for determining id the organisation contains sensitive content
+      location: Full adress
+      short_url: Url without http protocol
+
+      total_count: 'Accumulated %{tracked_value} across multiple profiles'
+      total_count_week_ago: 'Accumulated %{tracked_value} across multiple profiles from a week ago'
+      total_count_week_growth: 'Weekly growth of accumulated %{tracked_value} across multiple profiles'
+      total_count_week_avg_growth: 'Average weekly growth of accumulated %{tracked_value} across multiple profiles'
+      total_count_month_ago: 'Accumulated %{tracked_value} across multiple profiles from a month ago'
+      total_count_month_growth: 'Monthly growth of accumulated %{tracked_value} across multiple profiles'
+      total_count_month_avg_growth: 'Average monthly growth of accumulated %{tracked_value} across multiple profiles'
+      total_count_year_ago: 'Accumulated %{tracked_value} across multiple profiles from a year ago'
+      total_count_year_growth: 'Yearly growth of accumulated %{tracked_value} across multiple profiles'
+      total_count_year_avg_growth: 'Average yearly growth of accumulated %{tracked_value} across multiple profiles'
+
+    profile:
+      profile_type: A Profile
+      identifier: Identifier at network
+      url: Url to profile at network
+      last_api_update: Last updated from network on date
+      icon: Url to profile image
+      defective: Boolean value showing if there is problems updatting the profile from network
+      is_master_profile: Boolean value for showing if profile is the master profile for the organisation
+      id_at_service: The ID at network
+      cover_image: Url to cover image
+      type: The profile type
+      rank_value_attribute_name: The tracking attribute that determines the rank value
+      url_to_external_profile: Url to profile
+      name_of_external_link: Name for external link
+
+      tracked_value_count: Tracked value count
+      tracked_value_count_week_ago: Tracked value from a week ago
+      tracked_value_count_week_growth: Weekly growth of tracked value
+      tracked_value_count_week_avg_growth: Average weekly growth of tracked value
+      tracked_value_count_month_ago: Tracked value from a month ago
+      tracked_value_count_month_growth: Monthly growth of tracked_value
+      tracked_value_count_month_avg_growth: Average monthly growth of tracked_value
+      tracked_value_count_year_ago: Tracked value from a year ago
+      tracked_value_count_year_growth: Yearly growth of tracked value
+      tracked_value_count_year_avg_growth: Average yearly growth of tracked value
+
+    query:
+      query_type: Root queries
+      categories: Get all categories ordered by position
+      category: Get category by id
+      networks: Get all networks
+      network: Get network by id
+      organisations: Get all ranked organisations
+      organisation: Get organisation by id
+      profiles: Get all ranked profiles orders by rank value
+      profile: Get profile by id
+      trackings: Get trackings for profile by profile id
+      user: Current user
+      watchlists: Get all watchlists for current user
+      watchlist: Get watchlist by id for current user
+
+    tracking:
+      tracking_type: A Tracking
+      tracking_union: A collection of tracking types
+      tracking_interface: Shared fields of tracking unions
+      date: Date of the tracked value
+      service_values: 'Tracked values for %{network}'
+
+    user:
+      user_type: The current user
+      email: Email
+      first_name: First name
+      last_name: Last name
+      full_name: Full name
+      receive_newsletter: Boolean value indicating newsletter opt-in
+      salutation: Salutation
+      organisations_count: The amount of organisations the user is associated with
+      organisation_categories_count: The amount of categories the user is associated with
+      profiles_count: The amount of profiles the user is associated with
+
+    watchlist:
+      mail_options: Mail options
+      shareable: Boolean value for determining if the wathlist is shareable (in development)
+      watchlist_type: A watchlist

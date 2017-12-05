@@ -1,0 +1,23 @@
+<section class="pb-5">
+  <div class="card card-header-block">
+    <div class="card-body">
+      <div class="row">
+        <div class="col"><h4 class="card-title">Api Token</h4></div>
+        <div class="col-auto text-right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <%= resource.api_token %>
+          <%= simple_form_for resource, url: generate_token_path, signed: true do |f| %>
+            <%= f.button :submit, "Token Generieren", class: "btn btn-primary"  %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
