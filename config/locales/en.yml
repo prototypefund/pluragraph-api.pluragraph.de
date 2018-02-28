@@ -97,15 +97,15 @@ en:
 
     query:
       query_type: Root queries
-      categories: Get all categories ordered by position
+      categories: Get all categories ordered by position (Default limit 100)
       category: Get category by id
-      networks: Get all networks
+      networks: Get all networks (Default limit 100)
       network: Get network by id
-      organisations: Get all ranked organisations
+      organisations: Get all ranked organisations (Default limit 100)
       organisation: Get organisation by id
-      profiles: Get all ranked profiles orders by rank value
+      profiles: Get all ranked profiles orders by rank value (Default limit 100)
       profile: Get profile by id
-      trackings: Get trackings for profile by profile id
+      trackings: Get trackings for profile by profile id (Default limit 100)
       user: Current user
       watchlists: Get all watchlists for current user
       watchlist: Get watchlist by id for current user

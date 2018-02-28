@@ -7,7 +7,8 @@ module Pgapi
 
     field :categories, types[Types::CategoryType] do
       description I18n.t('documentation.query.categories')
-      resolve ->(_obj, _args, _ctx) { Category.ordered }
+      argument :limit, types.Int
+      resolve ->(_obj, args, _ctx) { Category.ordered.limit(args[:limit] || 100) }
     end
 
     field :category, Types::CategoryType do
@@ -18,7 +19,8 @@ module Pgapi
 
     field :networks, types[Types::NetworkType] do
       description I18n.t('documentation.query.networks')
-      resolve ->(_obj, _args, _ctx) { Network.used }
+      argument :limit, types.Int
+      resolve ->(_obj, args, _ctx) { Network.used.limit(args[:limit] || 100) }
     end
 
     field :network, Types::NetworkType do
@@ -29,7 +31,8 @@ module Pgapi
 
     field :organisations, types[Types::OrganisationType] do
       description I18n.t('documentation.query.organisations')
-      resolve ->(_obj, _args, _ctx) { Organisation.ranked.ordered }
+      argument :limit, types.Int
+      resolve ->(_obj, args, _ctx) { Organisation.ranked.ordered.limit(args[:limit] || 100) }
     end
 
     field :organisation, Types::OrganisationType do
@@ -40,7 +43,8 @@ module Pgapi
 
     field :profiles, types[Types::ProfileType] do
       description I18n.t('documentation.query.profiles')
-      resolve ->(_obj, _args, _ctx) { Profile.ranked.ordered }
+      argument :limit, types.Int
+      resolve ->(_obj, args, _ctx) { Profile.ranked.ordered.limit(args[:limit] || 100) }
     end
 
     field :profile, Types::ProfileType do
@@ -52,7 +56,8 @@ module Pgapi
     field :trackings, types[Types::TrackingUnion] do
       description I18n.t('documentation.query.trackings')
       argument :profile_id, !types.ID
-      resolve ->(_obj, args, _ctx) { Profile.find(args[:profile_id]).trackings.ordered }
+      argument :limit, types.Int
+      resolve ->(_obj, args, _ctx) { Profile.find(args[:profile_id]).trackings.ordered.limit(args[:limit] || 100) }
     end
 
     field :user, Types::UserType do
@@ -62,7 +67,8 @@ module Pgapi
 
     field :watchlists, types[Types::WatchlistType] do
       description I18n.t('documentation.query.watchlists')
-      resolve ->(_obj, _args, ctx) { ctx[:current_user].watchlists.ordered }
+      argument :limit, types.Int
+      resolve ->(_obj, args, ctx) { ctx[:current_user].watchlists.ordered.limit(args[:limit] || 100) }
     end
 
     field :watchlist, Types::WatchlistType do
