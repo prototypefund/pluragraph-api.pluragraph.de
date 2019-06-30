@@ -1,4 +1,4 @@
-# Pgapi
+# Pluragraph API
 A [GraphQL](https://graphql.org/) API engine for [Pluragraph](https://pluragraph.de).
 
 ## Read up on GraphQL
